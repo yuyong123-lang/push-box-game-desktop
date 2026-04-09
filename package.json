@@ -7,7 +7,7 @@
     "dev": "concurrently -k \"cross-env VITE_DEV_SERVER_URL=http://localhost:3000 vite\" \"wait-on http://localhost:3000 && cross-env VITE_DEV_SERVER_URL=http://localhost:3000 electron .\"",
     "build": "vite build",
     "preview": "vite build && electron .",
-    "electron:build": "vite build && electron-builder --win dir && node -e \"const fs=require('fs'); const o='release/win-unpacked'; const n='release/push-box-game'; if(fs.existsSync(o)){try{fs.renameSync(o,n)}catch(e){fs.cpSync(o,n,{recursive:true});fs.rmSync(o,{recursive:true})}}\""
+    "electron:build": "vite build && electron-builder --win"
   },
   "keywords": [],
   "author": "",

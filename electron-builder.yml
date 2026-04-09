@@ -12,12 +12,25 @@ extraResources:
     to: levels.json
 win:
   target:
-    - target: dir
+    - target: nsis
       arch:
         - x64
-  icon: public/images/icon.png
+  icon: public/images/icon.ico
   signAndEditExecutable: false
-  artifactName: "${productName}-${version}.${ext}"
+  artifactName: "${productName}-${version}-setup.${ext}"
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: false
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: "推箱子"
+  installerLanguages:
+    - zh-CN
+    - en-US
+  language: "2052"
 mac:
   target: dmg
   icon: public/images/icon.png
